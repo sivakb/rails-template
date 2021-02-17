@@ -15,5 +15,5 @@ jobs:
         destination_repo: 'sivakb/Sample'
         destination_folder: 'public'
         user_email: 'siva.kb@sprile.com'
-        user_name: 'siva'
+        user_name: 'sivakb'
         commit_message: 'A custom message for the commit'
