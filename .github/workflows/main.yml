@@ -10,7 +10,7 @@ jobs:
     - name: Pushes test file
       uses: sivakb/rails-template@v3
       env:
-        API_TOKEN_GITHUB: 'c6b30c15c50d97ac2e546481ad7a5fae53682b58'
+        API_TOKEN_GITHUB: ${{ secrets.staging.API_TOKEN_GITHUB }}
       with:
         source_file: 'README.md'
         destination_repo: 'sivakb/Sample'
