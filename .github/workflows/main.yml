@@ -8,7 +8,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Pushes test file
-      uses: sivakb/rails-template@v1
+      uses: sivakb/rails-template
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
