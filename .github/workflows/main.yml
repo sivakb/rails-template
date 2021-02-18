@@ -17,3 +17,4 @@ jobs:
           destination_repo: sivakb/test-repo
           push_include: "README.md"
           push_move: "README.md||public/README.md"
+          workflow: push
