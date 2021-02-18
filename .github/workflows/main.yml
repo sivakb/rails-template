@@ -13,6 +13,7 @@ jobs:
           ssh_key: ${{ secrets.SSH_KEY }}
           access_token: ${{ secrets.staging.API_TOKEN_GITHUB }}
           sot_repo: sivakb/rails-template
+          sot_branch: master
           destination_repo: sivakb/test-repo
           push_include: "README.md"
           push_move: "README.md||public/README.md"
