@@ -1,20 +1,19 @@
 name: Copy file from one to anyother
-on: push
+on:
+  push:
 jobs:
-  copy-file:
+  move-code:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-    - name: Pushes test file
-      uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.staging.API_TOKEN_GITHUB }}
-      with:
-        source_file: 'README.md'
-        destination_repo: 'sivakb/Sample'
-        destination_folder: 'public'
-        user_email: 'siva.kb@sprile.com'
-        user_name: 'sivakb'
-        commit_message: 'A custom message for the commit'
+      - uses: olivr/copybara-action@v1.2.2
+        with:
+          ssh_key: ${{ secrets.SSH_KEY }}
+          access_token: ${{ secrets.staging.API_TOKEN_GITHUB }}
+          sot_repo: sivakb/rails-template
+          destination_repo: sivakb/test-repo
+          push_include: "README.md"
+          push_move: "README.md||public/README.md"
