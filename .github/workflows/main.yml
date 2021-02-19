@@ -15,6 +15,5 @@ jobs:
           sot_repo: sivakb/rails-template
           sot_branch: master
           destination_repo: sivakb/Sample
+          destination_branch: master
           push_include: "README.md"
-          workflow: push
-          create_repo: no
